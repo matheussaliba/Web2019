@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Frases</title>
+</head>
+<body>
+	
+	<h2>Frases</h2>
+
+	<label for="sautor">Selecione um autor</label>
+	<select id="sautor" onchange="mostrarFrase()">
+		<option value="">--</option>
+		<option value="tolkien">R. R. Tolkien</option>
+		<option value="rowling">J.K. Rowling</option>
+		<option value="martin">George R. R. Martin</option>
+		<option value="lucas">George Lucas</option>
+	</select>
+
+	<div id="frase"></div>
+
+	<script type="text/javascript">
+		function mostrarFrase() {
+			var autor = document
+				.querySelector('#sautor')
+				.value;
+
+			var div = document
+				.querySelector('#frase');
+
+			switch (autor) {
+				case 'tolkien':
+					div.textContent = 'um mago nunca está atrasado';
+					break;
+				case 'rowling':
+					div.textContent = 'a alegria...';
+					break;
+				case 'martin':
+					div.textContent = 'a mente precisa de livros';
+
+			}
+		}
+	</script>
+</body>
+</html>

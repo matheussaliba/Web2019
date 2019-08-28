@@ -1,0 +1,28 @@
+body {
+	padding-left: 50px;
+}
+
+table {
+	margin-bottom: 30px;
+}
+
+footer {
+	font-size: 9pt;
+	text-align: center;
+}
+
+tbody tr:hover {
+	background-color: #87ceeb;
+}
+
+.selecionado {
+	background-color: #9370db;
+}
+
+.selecionado:hover {
+	background-color: #9370db;
+}
+
+.l-box {
+	padding: 0.5em;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Meu primeiro Javascript</title>
+</head>
+<body>
+
+	<button onclick="dizerOla()">Clique aqui!</button>
+
+	<p onmouseover="mudarNome()"
+	   on>Este é um parágrafo. Passe o mouse em
+	cima de mim. Eu te desafio!</p>
+
+	<p>Digite seu nome:</p>
+	<input id="inome" size="20">
+	<button onclick="mostrarMensagem()">Confirmar</button>
+	<span id="mensagem"></span>
+
+	<script type="text/javascript">
+
+	function dizerOla() {
+		alert("Olá!");
+	}
+
+	function mudarNome() {
+		var botao = document.querySelector("button");
+		botao.textContent = 'Ahá!';
+	}
+
+	function mostrarMensagem() {
+		var input = document.querySelector('#inome');
+		var nome = input.value;
+		var span = document.querySelector('#mensagem');
+		span.textContent = `Seja bem-vindo ao Javascript, ${nome} :)`;
+	}
+
+	</script>
+</body>
+</html>

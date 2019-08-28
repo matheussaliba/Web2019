@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Exercício 10</title>
+</head>
+<body>
+
+   <img src="imagens/balloons_pb.jpg">
+
+   <p>Passe o mouse aqui para ver a mágica</p>
+
+   <script type="text/javascript">
+      
+      var img = document.querySelector('img');
+
+      var p = document.querySelector('p');
+      p.onmouseover = function() {
+         img.src = 'imagens/balloons_colorido.jpg';
+      };
+
+   </script>
+   
+</body>
+</html>

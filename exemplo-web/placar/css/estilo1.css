@@ -1,0 +1,35 @@
+body {
+	background-color: #e2eeff;
+	font-family: Arial;
+}
+
+#header {
+	text-align: center;
+}
+
+#header, #conteudo {
+	background-color: #fff;
+	width: 900px;
+	margin: 0 auto;
+}
+div#placar {
+	display: flex;
+}
+
+div.bandeira, div#pontuacao {
+	flex: 1;
+	text-align: center;
+	margin: auto;	
+}
+
+div#pontuacao {
+	font-family: 'Verdana';
+	font-size: 18pt;
+	font-weight: bold;
+}
+
+div#mensagem {
+	font-size: 22pt;
+	color: green;
+	text-align: center;
+}

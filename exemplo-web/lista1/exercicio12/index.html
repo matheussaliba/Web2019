@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Exercício 12</title>
+   <link href="estilo.css" rel="stylesheet">
+</head>
+<body>
+   <button id="btmostrar">Mostrar Mensagens</button>
+
+   <div id="container">
+   </div>
+
+   <script type="text/javascript">
+   
+      document.querySelector('#btmostrar').onclick = function() {
+
+         let container = document.querySelector('#container');
+         var classes = ['cinza', 'azul', 'amarela', 'vermelha'];
+
+         for (let i = 0; i < classes.length; i++) {
+
+            let p = document.createElement('p');
+            p.textContent = 'Esta é uma mensagem';
+            p.classList.add(classes[i]);
+            container.appendChild(p);
+
+         }
+      };
+
+   </script>
+</body>
+</html>

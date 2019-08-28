@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Exercício 8</title>
+</head>
+<body>
+
+   <button id="btfeminina">Personagem Feminina</button>
+   <button id="btmasculina">Personagem Masculina</button>
+   
+   <div id="container_imagem">
+      
+   </div>
+
+   <script type="text/javascript">
+   
+      var img_feminina = 'http://rockntech.com.br/wp-content/uploads/2013/07/hermione-granger.jpg';
+      var img_masculina = 'http://4.bp.blogspot.com/-TzqZ5deR4L8/UtsrAs3IsSI/AAAAAAAAAGE/zjQ6paalEK4/s1600/qagi.png';
+
+      function buscarImg() {
+         let container = document.querySelector('#container_imagem');
+         let img = container.querySelector('img');
+
+         if (img == null) { // o componente img ainda não foi criado
+            img = document.createElement('img');
+            container.appendChild(img);
+         }
+
+         return img;
+      }
+
+      document.querySelector('#btfeminina').onclick = function() {
+         buscarImg().src = img_feminina;
+      };
+
+      document.querySelector('#btmasculina').onclick = function() {
+         buscarImg().src = img_masculina;
+      };
+   </script>
+
+</body>
+</html>

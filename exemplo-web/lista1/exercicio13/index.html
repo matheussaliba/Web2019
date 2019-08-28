@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Exercício 13</title>
+</head>
+<body>
+   
+   <div>
+      <label for="brasao">Selecione a casa</label>
+      <select id="brasao">
+         <option value="0">Selecione</option>
+         <option value="1">Grifinória</option>
+         <option value="2">Lufa Lufa</option>
+         <option value="3">Corvinal</option>
+         <option value="4">Sonserina</option>
+      </select>
+   </div>
+
+   <div>
+      <img id="imagem" src="" width="300" height="330"> 
+   </div>
+
+   <script type="text/javascript">
+   
+   var brasoes = Array(5);
+
+   brasoes[0] = '';
+   brasoes[1] = 'https://upload.wikimedia.org/wikipedia/commons/b/b5/Blason_Gryffondor.svg';
+   brasoes[2] = 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Coat_of_arms_Hufflepuff.svg';
+   brasoes[3] = 'https://upload.wikimedia.org/wikipedia/commons/9/9f/Blason_Serdaigle.svg';
+   brasoes[4] = 'https://upload.wikimedia.org/wikipedia/commons/9/97/Blason_Serpentard.svg';
+
+   var caixa_selecao = document.querySelector('#brasao');
+   var img = document.querySelector('#imagem');
+
+   caixa_selecao.onchange = function() {
+
+      img.src = brasoes[caixa_selecao.value];
+
+   }
+   
+   </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cálculo de Nota</title>
+</head>
+
+<body>
+	<h1>Cálculo de Nota</h1>
+
+	<label for="inota">Digite sua Nota</label>
+	<input id="inota" type="number" min="0" max="100">
+	<button onclick="calcularNota()">Calcular</button>
+
+	<div id="resultado"></div>
+
+	<script type="text/javascript">
+
+		function calcularNota() {
+			var nota = document
+				.querySelector('#inota')
+				.value;
+
+			if (nota < 60) {
+				document
+					.querySelector('#resultado')
+					.textContent = 'Reprovado';
+			} else {
+				document
+					.querySelector('#resultado')
+					.textContent = 'Aprovado';
+			}
+
+		}
+
+	</script>
+
+</body>
+</html>

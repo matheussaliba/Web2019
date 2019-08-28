@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contador usando Pure</title>
+
+	<link rel="stylesheet" href="../pure/pure-min.css">
+	<link rel="stylesheet" href="meu_estilo.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+	<div class="pure-g central">
+		<div class="pure-u-1">
+			<h1>Contador</h1>
+		</div>
+
+		<div class="pure-u-1">
+			<h2 id="numero">
+				0
+			</h2>
+		</div>
+
+		<div class="pure-u-1">
+			<button id="botao" class="pure-button pure-button-primary">Mais um</button>
+		</div>
+	</div>
+
+	<script>
+		var botao = document.querySelector('#botao');
+		var numero = document.querySelector('#numero');
+
+		botao.onclick = function() {
+			let valor = parseInt(numero.textContent);
+			valor = valor + 1;
+			numero.textContent = valor;
+		}
+	</script>
+</body>
+</html>

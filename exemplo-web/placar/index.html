@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Placar de Vôlei</title>
+	<link rel="stylesheet" href="css/estilo1.css">
+</head>
+<body>
+	<div id="header">
+		<h1>Placar de Vôlei</h1>
+	</div>
+	<div id="conteudo">
+		<div id="placar">
+			<div class="bandeira">
+				<img src="img/brasil.png" alt="Bandeira do Brasil">
+				<button id="botaobr">Pontuar</button>
+			</div>
+			<div id="pontuacao">
+				<span id="pontosbr">0</span> - <span id="pontoseua">0</span>
+			</div>
+			<div class="bandeira">
+				<img src="img/estadosunidos.png" alt="Bandeira dos Estados Unidos">
+				<button id="botaoeua">Pontuar</button>
+			</div>
+		</div>
+		<div id="mensagem"></div>
+	</div>
+	<script type="text/javascript">
+		document.querySelector('#botaobr').onclick = function() {
+			let span = document.querySelector('#pontosbr');
+			let p = span.textContent;
+			p = parseInt(p) + 1;
+			span.textContent = p;
+			verificarGanhador();
+		}
+
+		document.querySelector('#botaoeua').onclick = function() {
+			let span = document.querySelector('#pontoseua');
+			let p = span.textContent;
+			p = parseInt(p) + 1;
+			span.textContent = p;
+			verificarGanhador();
+		}
+
+		function verificarGanhador() {
+			let mensagem = document.querySelector('#mensagem');
+			let pontosbr = document.querySelector('#pontosbr').textContent;
+			let pontoseua = document.querySelector('#pontoseua').textContent;
+			pontosbr = parseInt(pontosbr);
+			pontoseua = parseInt(pontoseua);
+
+			let diferenca = pontosbr - pontoseua;
+
+			if ((pontosbr >= 15) && (diferenca >= 2)) {
+				mensagem.textContent = "O Brasil ganhou!";
+				travarPlacar();
+
+			} else if ((pontoseua >= 15) && (diferenca <= -2)) {
+				mensagem.textContent = "Os EUA ganharam!";
+				travarPlacar();
+			}
+
+		}
+
+		function travarPlacar() {
+			document.querySelector('#botaobr').disabled = true;
+			document.querySelector('#botaoeua').disabled = true;
+		}
+	</script>
+</body>
+</html>

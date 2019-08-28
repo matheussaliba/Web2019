@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tabelas 1</title>
+	<link rel="stylesheet" href="../pure/pure-min.css">
+	<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+	<h1>Carros e Seus Donos</h1>
+
+	<div>
+		<button id="btRemover" class="pure-button">Remover</button>
+	</div>
+
+	<table class="pure-table">
+		<thead>
+			<tr>
+				<th>Número</th>
+				<th>Modelo</th>
+				<th>Marca</th>
+				<th>Dono</th>
+				<th><input type="checkbox"></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>Uno</td>
+				<td>Fiat</td>
+				<td>Daniel</td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Corolla</td>
+				<td>Toyota</td>
+				<td>Bruno</td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Fit</td>
+				<td>Honda</td>
+				<td>Cristiane</td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>C3</td>
+				<td>Citröen</td>
+				<td>Wanda</td>
+				<td><input type="checkbox"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<form id="cadcarro" class="pure-form pure-form-stacked">
+
+		<fieldset>
+			<legend>Novo Registro</legend>
+
+			<label for="inumero">Número</label>
+			<input id="inumero" type="number">
+
+			<label for="imodelo">Modelo</label>
+			<input id="imodelo" type="text">
+
+			<label for="imarca">Marca</label>
+			<input id="imarca" type="text">
+
+			<label for="idono">Dono</label>
+			<input id="idono" type="text">
+
+		</fieldset>
+
+		<button id="btsalvar" type="button" class="pure-button">Salvar</button>
+	</form>
+
+	<footer>
+		<p>Copyright 2018 - desenvolvido com amor pelos
+		alunos do 3º ano de Informática</p>
+	</footer>
+
+	<script type="text/javascript">
+
+
+		function mudarCor(e) {
+			/*var input = document
+			  .querySelector('tbody input[type=checkbox]');*/
+
+			var input = e.target;
+
+			input
+			  .parentElement
+			  .parentElement
+			  .classList
+			  .toggle('selecionado');
+
+		}
+
+		var vetor = document.querySelectorAll('tbody input[type=checkbox]');
+
+		for (var i = 0; i < vetor.length; i++)
+		{
+			vetor[i].onclick = mudarCor;
+		}
+
+		function selecionarTodos()
+		{
+			var primeiro = document.querySelector('thead input');
+			var outros = document.querySelectorAll('tbody input');
+
+			for (var i = 0; i < outros.length; i++)
+				outros[i].checked = primeiro.checked;
+		}
+
+		document.querySelector('thead input').onclick = selecionarTodos;
+
+		var btRemover = document.querySelector('#btRemover');
+		btRemover.onclick = function() {
+
+			var elems = document.querySelectorAll('input:checked');
+			for (let i = 0; i < elems.length; i++)
+				elems[i]
+					.parentElement
+					.parentElement
+					.remove();
+
+		};
+
+
+		var btsalvar = document.querySelector('#btsalvar');
+		btsalvar.onclick = function() {
+
+			/*var inumero = document.querySelector('#inumero');
+			var imodelo = document.querySelector('#imodelo');
+			var imarca = document.querySelector('#imarca');
+			var idono = document.querySelector('#idono');
+			*/
+			var inputs = document
+				.querySelectorAll('#cadcarro input');
+
+
+			var tr = document.createElement('tr');
+			/*var td1 = document.createElement('td');
+			var td2 = document.createElement('td');
+			var td3 = document.createElement('td');
+			var td4 = document.createElement('td');
+			*/
+			var tds = [];
+			for (let i = 0; i < 5; i++) {
+				tds[i] = document.createElement('td');
+			}	
+
+			/*td1.textContent = inumero.value;
+			td2.textContent = imodelo.value;
+			td3.textContent = imarca.value;
+			td4.textContent = idono.value;
+			*/
+			for (let i = 0; i < 4; i++) {
+				tds[i].textContent = inputs[i].value;
+			}
+
+			var checkbox = document.createElement('input');
+			checkbox.type = 'checkbox';
+
+			tds[4].appendChild(checkbox);
+
+			/*tr.appendChild(td1);
+			tr.appendChild(td2);
+			tr.appendChild(td3);
+			tr.appendChild(td4);
+			*/
+			for (let i = 0; i < 5; i++) {
+				tr.appendChild(tds[i]);
+			}
+
+			document.querySelector('table tbody')
+				.appendChild(tr);
+		};
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
